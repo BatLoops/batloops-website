@@ -7,7 +7,9 @@
   border: 0px;
 
 }
-
+*::-webkit-scrollbar {
+  display: none;
+}
 *,
 *:before,
 *:after {

@@ -8,94 +8,151 @@
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230327195509" />
 	<link rel="stylesheet" href="css/style.min.css?_v=20230327195509">
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="shortcut icon" href="./whiteBat.png">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-brandingOverlay {
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction:column;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  .border-text {
-    position: relative;
-    font-size: 210px;
-    font-weight: bold;
-    text-transform: uppercase;
-	white-space:nowrap;
-    color: transparent;
-    -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #c51bf0;
-font-family: 'Poppins', sans-serif;      
-      
-  }  
-.rightToLeft{
-    
-    animation: moveRight 10s infinite alternate;
-}
-.leftToRight{
-    
-    animation: moveLeft 10s infinite alternate;
-}
-  
+		brandingOverlay {
+			margin: 0;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			background-color: #f0f0f0;
+		}
 
-@keyframes moveRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  25% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-  75% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
+		.border-text {
+			position: relative;
+			font-size: 210px;
+			font-weight: bold;
+			text-transform: uppercase;
+			white-space: nowrap;
+			color: transparent;
+			-webkit-text-stroke-width: 5px;
+			-webkit-text-stroke-color: #c51bf0;
+			font-family: 'Poppins', sans-serif;
 
-@keyframes moveLeft {
-  0% {
-    transform: translateX(100%);
-  }
-  25% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-100%);
-  }
-  75% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
+		}
+
+		.rightToLeft {
+
+			animation: moveRight 10s infinite linear;
+		}
+
+		.leftToRight {
+
+			animation: moveLeft 10s infinite linear;
+		}
+
+
+		@keyframes moveRight {
+			0% {
+				left: -200%;
+			}
+
+			100% {
+				left: 200%;
+			}
+		}
+
+		@keyframes moveLeft {
+			0% {
+				right: -200%;
+			}
+
+			100% {
+				right: 200%;
+			}
+		}
 
 
 
 
-.brandingOverlay{
-  position:sticky;
-  z-index:999;
-}
+		.brandingOverlay {
+			position: sticky;
+			z-index: 999;
+		}
 
-.logo_main{
-	font-family: "Inter Tight", sans-serif;
-    font-weight: 700;
-    text-transform: lowercase;
-	font-size: xx-large;
-}
-  
+		.logo_main {
+			font-family: "Inter Tight", sans-serif;
+			font-weight: 700;
+			text-transform: lowercase;
+			font-size: xx-large;
+		}
+
+
+		.scrolling_text {
+			width: 100%;
+			overflow: hidden;
+			display: flex;
+			white-space: nowrap;
+		}
+
+
+
+
+		.text span {
+			margin: 0 40px;
+		}
+
+		@keyframes animate_text {
+			from {
+				transform: translate3d(0, 0, 0);
+			}
+
+			to {
+				transform: translate3d(-100%, 0, 0);
+			}
+		}
+
+		@keyframes animate_text_alt {
+
+			from {
+				transform: translate3d(-100%, 0, 0);
+			}
+
+			to {
+				transform: translate3d(0, 0, 0);
+			}
+		}
+
+		.text {
+			font-size: 100px;
+			font-weight: 500;
+			text-transform: uppercase;
+			color: transparent;
+			-webkit-text-stroke-width: 3px;
+			-webkit-text-stroke-color: #c51bf0;
+			animation: animate_text 30s linear infinite;
+			/* The animation property */
+		}
+
+		.text_alt {
+			font-size: 200px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: transparent;
+			-webkit-text-stroke-width: 5px;
+			-webkit-text-stroke-color: #c51bf0;
+			animation: animate_text_alt 30s linear infinite;
+			/* The animation property */
+		}
+
+		@media only screen and (max-width: 768px) {
+			.text_alt {
+				display: none;
+			}
+			.text {
+				display: none;
+			}
+
+			.header__wrapper::before {
+				bottom: 20px;
+			}
+
+		}
 	</style>
 </head>
 
@@ -108,16 +165,18 @@ font-family: 'Poppins', sans-serif;
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a class="header__logo" href="index.html" style="display: flex; align-items: center;">
-						<img src="favicon.png" alt="Logo" class="logo-image" style="margin-right: 10px;">
+						<img src="purpleBat.png" alt="Logo" class="logo-image"
+							style="margin: 20px;height: 50%;width: 50%;">
 						<h1 class="logo_main">Bat<span style="color: #c51bf0;">Loop</span></h1>
 					</a>
-					  
+
 					<nav class="header__menu menu">
 						<ul class="menu__items">
 							<li class="menu__item"><a href="index.html">home.</a></li>
 							<li class="menu__item"><a href="careers.html">careers.</a></li>
 							<li class="menu__item"><a href="contacts.html">contacts.</a></li>
-							<li class="menu__item menu__item_gradient"><a href="BatLoop_Community.html">#BatLoopCommunity</a></li>
+							<li class="menu__item menu__item_gradient"><a
+									href="BatLoop_Community.html">#BatLoopCommunity</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -131,61 +190,111 @@ font-family: 'Poppins', sans-serif;
 					<section class="welcome">
 						<div id="preload-text-position-holder" class="welcome__title"><span class="text_thin">welcome to
 							</span><span class="text-accent_violet">BatLoop.tech </span></div>
-						<div id="preload-text-original" class="welcome__title"><span class="text_thin">welcome to </span><span class="text-accent_violet">BatLoop.Tech</span></div>
+						<div id="preload-text-original" class="welcome__title"><span class="text_thin">welcome to
+							</span><span class="text-accent_violet">BatLoop.Tech</span></div>
 
 						<div class="welcome__content media-block media-block_animated">
 							<div class="media-block__row">
 								<div class="media-block__text text_grey _text-anim-origin">Software</div>
-								<div class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
+								<div
+									class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
 									Software</div>
 								<div class="media-block__media _animate-appear _img-anim-hidden">
-									<picture><source srcset="img/home/welcome/media-1.webp" type="image/webp"><img src="img/home/welcome/media-1.webp" alt="skyscrapers"></picture>
+									<picture>
+										<source srcset="img/home/welcome/media-1.webp" type="image/webp"><img
+											src="img/home/welcome/media-1.webp" alt="skyscrapers">
+									</picture>
 								</div>
 							</div>
 							<div class="media-block__row">
 								<div class="media-block__media _animate-appear _img-anim-hidden">
-									<picture><source srcset="img/home/welcome/media-2.webp" type="image/webp"><img src="img/home/welcome/media-2.webp" alt="BatLoop office number"></picture>
+									<picture>
+										<source srcset="img/home/welcome/media-2.webp" type="image/webp"><img
+											src="img/home/welcome/media-2.webp" alt="BatLoop office number">
+									</picture>
 								</div>
 								<div class="media-block__text text_grey _text-anim-origin">Development</div>
-								<div class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_l-r">
+								<div
+									class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_l-r">
 									Development</div>
 							</div>
 							<div class="media-block__row">
 								<div class="media-block__text text_grey _text-anim-origin">COMPANY</div>
-								<div class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
+								<div
+									class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
 									COMPANY
 								</div>
 								<div class="media-block__media _animate-appear _img-anim-hidden">
-									<video src="img/home/welcome/media-3.mp4" autoplay muted loop playsinline alt="video of buildings"></video>
+									<video src="img/home/welcome/media-3.mp4" autoplay muted loop playsinline
+										alt="video of buildings"></video>
 								</div>
 							</div>
 						</div>
 
 						<div class="welcome__goals goals block-cross-out _glass-blured">
-							<div class="goals__title text_grey">We make your goals a reality with our <span class="text-accent_aqua">software
+							<div class="goals__title text_grey">We make your goals a reality with our <span
+									class="text-accent_aqua">software
 									systems</span></div>
-							<div class="goals__description">BatLoop provides technology solutions to optimize and Grow your business<span class="text-accent_orange">/</span></div>
+							<div class="goals__description">BatLoop provides technology solutions to optimize and Grow
+								your business<span class="text-accent_orange">/</span></div>
 						</div>
-						
+
 
 					</section>
+					<section style="margin-bottom: 20px;">
+						<div class='brandingOverlayBatloop'>
+							<div class="scrolling_text">
+								<div class="text">
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+								</div>
+								<div class="text">
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+								</div>
+							</div>
 
+							<div class="scrolling_text">
+								<div class="text_alt">
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+								</div>
+								<div class="text_alt">
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+									<span>BatLoop.tech</span>
+								</div>
+							</div>
+						</div>
+					</section>
 					<!-- //=== moving-text = section ============================================================================================ -->
-					<div class='brandingOverlay'>
-						<div class="border-text rightToLeft">BatLoop.tech </div>
-						<div class="border-text leftToRight">BatLoop.tech </div>
-					</div>
+					<!-- <div class="border-text rightToLeft">BatLoop.tech </div>
+						<div class="border-text leftToRight">BatLoop.tech </div> -->
+
 
 					<!-- //=== what-we-do = section ============================================================================================ -->
 					<section class="what-we-do">
-						<div class="what-we-do__title title">why <span class="text_grey">we?</span><span class="text-accent_orange">/</span>
+						<div class="what-we-do__title title">why <span class="text_grey">us?</span><span
+								class="text-accent_orange">/</span>
 						</div>
 						<div class="what-we-do__content">
 							<div class="what-we-do__years-block years-block block-cross-out">
 								<div class="years-block__quantity">2+</div>
 								<div class="years-block__text text-accent_aqua">years</div>
 							</div>
-							<p class="what-we-do__text"><span class="text-accent_violet">BatLoop</span> brings over 2+ years of experience
+							<p class="what-we-do__text"><span class="text-accent_violet">BatLoop</span> brings over 2+
+								years of experience
 								in the Software and IT sector, a solid track record, and enduring integration background
 								in enterprise-grade projects to our client's disposal</p>
 						</div>
@@ -193,32 +302,48 @@ font-family: 'Poppins', sans-serif;
 
 					<div class="astronaut__container">
 						<div class="astronaut rellax" data-rellax-speed="-8">
-							<picture><source srcset="img/home/astronaut.webp" type="image/webp"><img src="img/home/astronaut.png" alt="astronaut"></picture>
+							<picture>
+								<source srcset="img/home/astronaut.webp" type="image/webp"><img
+									src="img/home/astronaut.png" alt="astronaut">
+							</picture>
 						</div>
 					</div>
 					<!-- //=== what-we-offer = section ============================================================================================ -->
 					<section class="what-we-offer">
-						<div class="what-we-offer__title title">what we <span class="text_grey">offer</span><span class="text-accent_orange">/</span>
+						<div class="what-we-offer__title title">what we <span class="text_grey">offer</span><span
+								class="text-accent_orange">/</span>
 						</div>
 						<div class="what-we-offer__content">
 							<div class="what-we-offer__column">
 								<div class="what-we-offer__card offer-cadr block-cross-out">
 									<div class="offer-cadr__title">Website/Application(ios/Android) Development</div>
-									<div class="offer-cadr__text">Elevate your digital presence with our expert Website and Mobile App (iOS/Android) Development services. Tailored solutions that seamlessly blend innovation and functionality for a standout online experience.</div>
+									<div class="offer-cadr__text">Elevate your digital presence with our expert Website
+										and Mobile App (iOS/Android) Development services. Tailored solutions that
+										seamlessly blend innovation and functionality for a standout online experience.
+									</div>
 								</div>
 								<div class="what-we-offer__card offer-cadr block-cross-out">
 									<div class="offer-cadr__title">Support Anytime & Anywhere</div>
-									<div class="offer-cadr__text">Experience unparalleled convenience with our 'Support Anytime & Anywhere' service. Our dedicated team ensures prompt assistance whenever and wherever you need it, guaranteeing a seamless and reliable support experience.</div>
+									<div class="offer-cadr__text">Experience unparalleled convenience with our 'Support
+										Anytime & Anywhere' service. Our dedicated team ensures prompt assistance
+										whenever and wherever you need it, guaranteeing a seamless and reliable support
+										experience.</div>
 								</div>
 							</div>
 							<div class="what-we-offer__column">
 								<div class="what-we-offer__card offer-cadr block-cross-out">
 									<div class="offer-cadr__title">Game Development</div>
-									<div class="offer-cadr__text">Elevate entertainment with our Game Development expertise. We craft immersive, captivating experiences that push boundaries. Transform ideas into interactive realities with our cutting-edge solutions. Level up your gaming journey!</div>
+									<div class="offer-cadr__text">Elevate entertainment with our Game Development
+										expertise. We craft immersive, captivating experiences that push boundaries.
+										Transform ideas into interactive realities with our cutting-edge solutions.
+										Level up your gaming journey!</div>
 								</div>
 								<div class="what-we-offer__card offer-cadr block-cross-out">
 									<div class="offer-cadr__title">Promotion & Partnerships</div>
-									<div class="offer-cadr__text">Elevate your brand through strategic Promotion & Partnerships. Our tailored services ensure increased visibility, brand recognition, and fruitful collaborations, driving success in today's competitive market.</div>
+									<div class="offer-cadr__text">Elevate your brand through strategic Promotion &
+										Partnerships. Our tailored services ensure increased visibility, brand
+										recognition, and fruitful collaborations, driving success in today's competitive
+										market.</div>
 								</div>
 							</div>
 						</div>
@@ -226,28 +351,41 @@ font-family: 'Poppins', sans-serif;
 
 					<!-- //=== partners = section ============================================================================================ -->
 					<section class="partners">
-						<div class="partners__title title">who we <span class="text_grey">partner with</span><span class="text-accent_orange">/</span>
+						<div class="partners__title title">whom we <span class="text_grey">partnered with</span><span
+								class="text-accent_orange">/</span>
 						</div>
 						<div class="partners__cards">
 							<a class="partners__card card-partner" href="https://changelly.com/" target="_blank">
 								<div class="card-partner__wrapper block-cross-in-link">
 									<span class="block-cross-in-link__left-elements"></span>
 									<span class="block-cross-in-link__right-elements"></span>
-									<picture><source srcset="img/home/partners/partner_logo_1.webp" type="image/webp"><img src="img/home/partners/partner_logo_1.png" alt="" class="card-partner__logo"></picture>
+									<picture>
+										<source srcset="img/home/partners/partner_logo_1.webp" type="image/webp"><img
+											src="img/home/partners/partner_logo_1.png" alt=""
+											class="card-partner__logo">
+									</picture>
 								</div>
 							</a>
 							<a class="partners__card card-partner" href="https://www.moonpay.com/" target="_blank">
 								<div class="card-partner__wrapper block-cross-in-link">
 									<span class="block-cross-in-link__left-elements"></span>
 									<span class="block-cross-in-link__right-elements"></span>
-									<picture><source srcset="img/home/partners/partner_logo_2.webp" type="image/webp"><img src="img/home/partners/partner_logo_2.png" alt="" class="card-partner__logo"></picture>
+									<picture>
+										<source srcset="img/home/partners/partner_logo_2.webp" type="image/webp"><img
+											src="img/home/partners/partner_logo_2.png" alt=""
+											class="card-partner__logo">
+									</picture>
 								</div>
 							</a>
 							<a class="partners__card card-partner" href="https://www.simplex.com/" target="_blank">
 								<div class="card-partner__wrapper block-cross-in-link">
 									<span class="block-cross-in-link__left-elements"></span>
 									<span class="block-cross-in-link__right-elements"></span>
-									<picture><source srcset="img/home/partners/partner_logo_3.webp" type="image/webp"><img src="img/home/partners/partner_logo_3.png" alt="" class="card-partner__logo"></picture>
+									<picture>
+										<source srcset="img/home/partners/partner_logo_3.webp" type="image/webp"><img
+											src="img/home/partners/partner_logo_3.png" alt=""
+											class="card-partner__logo">
+									</picture>
 								</div>
 							</a>
 						</div>
@@ -256,31 +394,44 @@ font-family: 'Poppins', sans-serif;
 					<!--//========== how-we-work = section =========================-->
 
 					<section class="how-we-work">
-						<div class="how-we-work__title title">how we <span class="text_grey">work</span><span class="text-accent_orange">/</span>
+						<div class="how-we-work__title title">how do we <span class="text_grey">work</span><span
+								class="text-accent_orange">/</span>
 						</div>
 						<div class="how-we-work__list-wrapper block-cross-out">
 							<ul class="how-we-work__list triangeled-list">
-								<li class="triangeled-list__item">You gain control over your workflow, not the other way around</li>
-								<li class="triangeled-list__item">You bring your skills to exciting, challenging tasks and develop
+								<li class="triangeled-list__item">You gain control over your workflow, not the other way
+									around</li>
+								<li class="triangeled-list__item">You bring your skills to exciting, challenging tasks
+									and develop
 									yourself professionally</li>
-								<li class="triangeled-list__item">You choose whether to work flexible hours, a hybrid schedule, or a
+								<li class="triangeled-list__item">You choose whether to work flexible hours, a hybrid
+									schedule, or a
 									completely remote</li>
 							</ul>
 						</div>
 
 						<div class="how-we-work__content media-block">
 							<div class="media-block__emoji">
-								<picture><source srcset="img/home/how-we-work/ok.webp" type="image/webp"><img src="img/home/how-we-work/ok.png" alt="OK emoji"></picture>
+								<picture>
+									<source srcset="img/home/how-we-work/ok.webp" type="image/webp"><img
+										src="img/home/how-we-work/ok.png" alt="OK emoji">
+								</picture>
 							</div>
 							<div class="media-block__row">
 								<div class="media-block__text">Design with</div>
 								<div class="media-block__media media-block__media">
-									<picture><source srcset="img/home/how-we-work/meeting.webp" type="image/webp"><img src="img/home/how-we-work/meeting.jpg" alt="meeting"></picture>
+									<picture>
+										<source srcset="img/home/how-we-work/meeting.webp" type="image/webp"><img
+											src="img/home/how-we-work/meeting.jpg" alt="meeting">
+									</picture>
 								</div>
 							</div>
 							<div class="media-block__row">
 								<div class="media-block__media media-block__media_tall">
-									<picture><source srcset="img/home/how-we-work/team.webp" type="image/webp"><img src="img/home/how-we-work/team.jpg" alt="team"></picture>
+									<picture>
+										<source srcset="img/home/how-we-work/team.webp" type="image/webp"><img
+											src="img/home/how-we-work/team.jpg" alt="team">
+									</picture>
 								</div>
 
 								<div class="media-block__text">
@@ -294,7 +445,8 @@ font-family: 'Poppins', sans-serif;
 									<div class="media-block__row">
 										<div class="media-block__text text_grey">love</div>
 										<div class="media-block__media media-block__media">
-											<video src="img/home/how-we-work/new-year.mp4" autoplay muted loop playsinline alt="New year selebrating"></video>
+											<video src="img/home/how-we-work/new-year.mp4" autoplay muted loop
+												playsinline alt="New year selebrating"></video>
 										</div>
 									</div>
 								</div>
@@ -304,7 +456,8 @@ font-family: 'Poppins', sans-serif;
 					</section>
 
 					<section class="who-we-are">
-						<div class="who-we-are__title title">who <span class="text_grey">we are</span><span class="text-accent_orange">/</span>
+						<div class="who-we-are__title title">what <span class="text_grey">we are</span><span
+								class="text-accent_orange">/</span>
 						</div>
 
 						<div class="who-we-are__content media-block">
@@ -312,29 +465,34 @@ font-family: 'Poppins', sans-serif;
 								<div class="media-block__text">KOLKATA-BASED</div>
 							</div>
 							<div class="media-block__row">
-								
+
 								<div class="media-block__text">PRODUCT & SERVICE BASED</div>
 							</div>
 							<div class="media-block__row">
 								<div class="media-block__text text_grey">COMPANY</div>
-								
+
 							</div>
 						</div>
 
 						<div class="who-we-are__list-wrapper block-cross-out">
 							<ul class="who-we-are__list triangeled-list">
-								<li class="triangeled-list__item">Technical: Websites, Mobile Apps(IOS/Android), Games (PC/Mobile), Devops, Project Managers</li>
+								<li class="triangeled-list__item">Technical: Websites, Mobile Apps(IOS/Android), Games
+									(PC/Mobile), Devops, Project Managers</li>
 								<li class="triangeled-list__item">Operations: Customer & Technical Support</li>
-								<li class="triangeled-list__item">Marketing: PR & SMM, Community, SEO/ASO, Affiliate, CRM</li>
-								<li class="triangeled-list__item">Product: Product Managers, UI/UX Designers, Analytics</li>
-								<li class="triangeled-list__item">Business Development: Sales & Key Account Managers</li>
+								<li class="triangeled-list__item">Marketing: PR & SMM, Community, SEO/ASO, Affiliate,
+									CRM</li>
+								<li class="triangeled-list__item">Product: Product Managers, UI/UX Designers, Analytics
+								</li>
+								<li class="triangeled-list__item">Business Development: Sales & Key Account Managers
+								</li>
 							</ul>
 						</div>
 					</section>
 
 					<!--//========== what-we-say = section =========================-->
 					<section class="what-we-say">
-						<div class="what-we-say__title title">what <span class="text_grey">we say</span><span class="text-accent_orange">/</span>
+						<div class="what-we-say__title title">what <span class="text_grey">we say</span><span
+								class="text-accent_orange">/</span>
 						</div>
 
 						<div class="comments">
@@ -348,7 +506,12 @@ font-family: 'Poppins', sans-serif;
 											<div class="slide-comm__row">
 												<div class="slide-comm__aside">
 													<div class="slide-comm__photo">
-														<picture><source srcset="img/home/what-we-say/subh.jpeg" type="image/jpeg"><img src="img/home/what-we-say/subh.jpeg" alt="Rohit Debnath"></picture>
+														<picture>
+															<source srcset="img/home/what-we-say/subh.jpeg"
+																type="image/jpeg"><img
+																src="img/home/what-we-say/subh.jpeg"
+																alt="Rohit Debnath">
+														</picture>
 													</div>
 													<div class="slide-comm__name">
 														<span>Subhadip Saha</span>,
@@ -368,15 +531,25 @@ font-family: 'Poppins', sans-serif;
 												</div>
 												<div class="slide-comm__text-wrapper">
 													<div class="slide-comm__text needShowMore">
-														<p>As a dedicated Game Developer, our studio proudly holds a prominent position in the industry. With a team boasting robust technical skills and profound knowledge in game development, we confidently tackle diverse projects. What sets us apart at BatLoop is our highly motivated team and visionary management, articulating a clear strategy for product, team, and process development. Our commitment to innovation and proactive leadership continually propels us towards new opportunities for growth, ensuring excellence in the ever-evolving landscape of game development.
+														<p>As a dedicated Game Developer, our studio proudly holds a
+															prominent position in the industry. With a team boasting
+															robust technical skills and profound knowledge in game
+															development, including full-stack and backend development
+															expertise, we confidently tackle diverse projects. What sets
+															us apart at BatLoop is our highly motivated team and
+															visionary management, articulating a clear strategy for
+															product, team, and process development. Our commitment to
+															innovation and proactive leadership continually propels us
+															towards new opportunities for growth, ensuring excellence in
+															the ever-evolving landscape of game development.
 														</p>
 														<p>
-														
+
 														</p>
 													</div>
 													<button type="button" class="slide-comm__button">
 														<span class="slide-comm__button_full">view full text</span>
-														<span class="slide-comm__button_short">view short text</span>
+														<span class="slide-comm__button_short">hide</span>
 													</button>
 												</div>
 											</div>
@@ -385,7 +558,12 @@ font-family: 'Poppins', sans-serif;
 											<div class="slide-comm__row">
 												<div class="slide-comm__aside">
 													<div class="slide-comm__photo">
-														<picture><source srcset="img/home/what-we-say/rohit.jpeg" type="image/jpeg"><img src="img/home/what-we-say/rohit.jpeg" alt="Rohit Debnath"></picture>
+														<picture>
+															<source srcset="img/home/what-we-say/rohit.jpeg"
+																type="image/jpeg"><img
+																src="img/home/what-we-say/rohit.jpeg"
+																alt="Rohit Debnath">
+														</picture>
 													</div>
 													<div class="slide-comm__name">
 														<span>Rohit Debnath</span>,
@@ -405,11 +583,15 @@ font-family: 'Poppins', sans-serif;
 												</div>
 												<div class="slide-comm__text-wrapper">
 													<div class="slide-comm__text needShowMore">
-														<p>Our IT company is truly exceptional. The team's collaborative spirit and forward-thinking
-															approach make it an exciting place to work. The leadership team is open to new ideas, and
-															the work environment is inclusive, supportive, and respectful. Our company's core values
+														<p>Our IT company is truly exceptional. The team's collaborative
+															spirit and forward-thinking
+															approach make it an exciting place to work. The leadership
+															team is open to new ideas, and
+															the work environment is inclusive, supportive, and
+															respectful. Our company's core values
 															and
-															commitment to employee well-being make it a great place to work.
+															commitment to employee well-being make it a great place to
+															work.
 														</p>
 														<p>
 															Most of all I like atmosphere in the team.❤️
@@ -508,8 +690,10 @@ font-family: 'Poppins', sans-serif;
 							<!-- <a href="/careers/" class="animated-link"> -->
 
 							<div class="animated-link__wrapper animated-link__wrapper_rotate">
-								<span class="animated-link__text animated-link__text_outlined">see our job listings</span>
-								<span class="animated-link__append animated-link__append_outlined text-accent_violet">></span>
+								<span class="animated-link__text animated-link__text_outlined">see our job
+									listings</span>
+								<span
+									class="animated-link__append animated-link__append_outlined text-accent_violet">></span>
 							</div>
 							<div class="animated-link__wrapper">
 								<span class="animated-link__text">see our job listings</span>
@@ -530,7 +714,8 @@ font-family: 'Poppins', sans-serif;
 							<li class="menu-footer__item"><a href="index.html">home.</a></li>
 							<li class="menu-footer__item"><a href="careers.html">careers.</a></li>
 							<li class="menu-footer__item"><a href="contacts.html">contacts.</a></li>
-							<li class="menu-footer__item menu-footer__item_gradient"><a href="BatLoop_Community.html">#BatLoop_Community</a></li>
+							<li class="menu-footer__item menu-footer__item_gradient"><a
+									href="BatLoop_Community.html">#BatLoop_Community</a></li>
 						</ul>
 					</nav>
 					<div class="footer__copyright">© 2024 BatLoop</div>
@@ -547,15 +732,19 @@ font-family: 'Poppins', sans-serif;
 						<div class="animated-line"></div>
 					</div>
 
-					<div class="popup__title">Backend <span class="text_grey">Developers</span><span class="text-accent_orange">/</span></div>
+					<div class="popup__title">Backend <span class="text_grey">Developers</span><span
+							class="text-accent_orange">/</span></div>
 					<div class="popup__text-wrapper block-cross-out">
 						<div class="popup__text text-popup">
-							<div class="text-popup__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex corrupti
-								incidunt modi ipsa totam culpa numquam fuga nisi nihil quam voluptas, doloremque reprehenderit odio qui.
+							<div class="text-popup__description">Lorem, ipsum dolor sit amet consectetur adipisicing
+								elit. Ex corrupti
+								incidunt modi ipsa totam culpa numquam fuga nisi nihil quam voluptas, doloremque
+								reprehenderit odio qui.
 							</div>
 							<ul class="text-popup__features triangeled-list">
 								<li class="triangeled-list__item">The team uses: <br>Lorem, ipsum, dolor, sit amet.</li>
-								<li class="triangeled-list__item">Primary responsibilities: <br>Lorem, amet, dolor sit.</li>
+								<li class="triangeled-list__item">Primary responsibilities: <br>Lorem, amet, dolor sit.
+								</li>
 							</ul>
 						</div>
 					</div>
