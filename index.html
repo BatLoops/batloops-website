@@ -8,7 +8,7 @@
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230327195509" />
 	<link rel="stylesheet" href="css/style.min.css?_v=20230327195509">
-	<link rel="shortcut icon" href="./whiteBat.png">
+	<link rel="shortcut icon" href="./newLogoBatLoop.png">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -123,7 +123,7 @@
 			font-weight: 500;
 			text-transform: uppercase;
 			color: transparent;
-			-webkit-text-stroke-width: 3px;
+			-webkit-text-stroke-width: 2px;
 			-webkit-text-stroke-color: #c51bf0;
 			animation: animate_text 30s linear infinite;
 			/* The animation property */
@@ -134,16 +134,92 @@
 			font-weight: 700;
 			text-transform: uppercase;
 			color: transparent;
-			-webkit-text-stroke-width: 5px;
+			-webkit-text-stroke-width: 3px;
 			-webkit-text-stroke-color: #c51bf0;
-			animation: animate_text_alt 30s linear infinite;
+			animation: animate_text_alt 45s linear infinite;
 			/* The animation property */
 		}
 
+
+
+		.scroll {
+			position: relative;
+			width: 100vw;
+			overflow: hidden;
+			z-index: 1;
+			margin: 0;
+			padding: 0;
+		}
+
+		.m-scroll {
+			overflow: hidden;
+			height: 100%;
+			white-space: nowrap;
+			animation: scrollText 10s infinite linear;
+			margin: 0;
+			font-size: 0;
+			display: flex;
+			justify-content: space-between;
+			width: fit-content;
+		}
+
+		span {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			color: white;
+		}
+
+
+		@keyframes scrollText {
+			from {
+				transform: translateX(0%);
+			}
+
+			to {
+				transform: translateX(-50%);
+			}
+		}
+
+
+
+		.clientImageHolder {
+			padding: 20px;
+			border-radius: 10px;
+			margin: 10px;
+			background-color: #ebebeb68;
+			backdrop-filter: blur(5px);
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				border-radius: 10px;
+				width: 150px;
+
+			}
+		}
+
+		.clientImageHolder:hover {
+			padding: 30px;
+
+			img {
+				width: 130px;
+			}
+		}
+		
+		.logo-image{
+			margin: 20px;height: 50%;width: 50%;
+		}
 		@media only screen and (max-width: 768px) {
+			.logo-image{
+				margin: 20px;height: 50%;width: 50%;
+			}
 			.text_alt {
 				display: none;
 			}
+
 			.text {
 				display: none;
 			}
@@ -152,6 +228,22 @@
 				bottom: 20px;
 			}
 
+			.clientImageHolder {
+				padding: 20px;
+				border-radius: 10px;
+				margin: 10px;
+				background-color: #ebebeb68;
+				backdrop-filter: blur(5px);
+				display: flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					border-radius: 10px;
+					width: 80px;
+				}
+			}
 		}
 	</style>
 </head>
@@ -165,9 +257,8 @@
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a class="header__logo" href="index.html" style="display: flex; align-items: center;">
-						<img src="purpleBat.png" alt="Logo" class="logo-image"
-							style="margin: 20px;height: 50%;width: 50%;">
-						<h1 class="logo_main">Bat<span style="color: #c51bf0;">Loop</span></h1>
+						<img src="./newLogoBatLoop.png" alt="Logo" class="logo-image" style="margin: 20px;height: 50%;width: 50%;">
+						<h1 class="logo_main">Bat<span style="color: #c51bf0; display: initial;">Loop</span></h1>
 					</a>
 
 					<nav class="header__menu menu">
@@ -189,46 +280,46 @@
 					<!-- //=== welcome = section ================================================================================================== -->
 					<section class="welcome">
 						<div id="preload-text-position-holder" class="welcome__title"><span class="text_thin">welcome to
-							</span><span class="text-accent_violet">BatLoop.tech </span></div>
-						<div id="preload-text-original" class="welcome__title"><span class="text_thin">welcome to
-							</span><span class="text-accent_violet">BatLoop.Tech</span></div>
+							</span><span class="text-accent_violet">&nbsp;BatLoop.tech </span></div>
+						<div id="preload-text-original" class="welcome__title" ><span class="text_thin">welcome to
+							</span><span class="text-accent_violet">&nbsp;BatLoop.Tech</span></div>
 
-						<div class="welcome__content media-block media-block_animated">
-							<div class="media-block__row">
-								<div class="media-block__text text_grey _text-anim-origin">Software</div>
-								<div
-									class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
-									Software</div>
-								<div class="media-block__media _animate-appear _img-anim-hidden">
-									<picture>
-										<source srcset="img/home/welcome/media-1.webp" type="image/webp"><img
-											src="img/home/welcome/media-1.webp" alt="skyscrapers">
-									</picture>
+						<div class=" welcome__content media-block media-block_animated">
+								<div class="media-block__row">
+									<div class="media-block__text text_grey _text-anim-origin">Software</div>
+									<div
+										class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
+										Software</div>
+									<div class="media-block__media _animate-appear _img-anim-hidden">
+										<picture>
+											<source srcset="img/home/welcome/media-1.webp" type="image/webp"><img
+												src="img/home/welcome/media-1.webp" alt="skyscrapers">
+										</picture>
+									</div>
 								</div>
-							</div>
-							<div class="media-block__row">
-								<div class="media-block__media _animate-appear _img-anim-hidden">
-									<picture>
-										<source srcset="img/home/welcome/media-2.webp" type="image/webp"><img
-											src="img/home/welcome/media-2.webp" alt="BatLoop office number">
-									</picture>
+								<div class="media-block__row">
+									<div class="media-block__media _animate-appear _img-anim-hidden">
+										<picture>
+											<source srcset="img/home/welcome/media-2.webp" type="image/webp"><img
+												src="img/home/welcome/media-2.webp" alt="BatLoop office number">
+										</picture>
+									</div>
+									<div class="media-block__text text_grey _text-anim-origin">Development</div>
+									<div
+										class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_l-r">
+										Development</div>
 								</div>
-								<div class="media-block__text text_grey _text-anim-origin">Development</div>
-								<div
-									class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_l-r">
-									Development</div>
-							</div>
-							<div class="media-block__row">
-								<div class="media-block__text text_grey _text-anim-origin">COMPANY</div>
-								<div
-									class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
-									COMPANY
+								<div class="media-block__row">
+									<div class="media-block__text text_grey _text-anim-origin">COMPANY</div>
+									<div
+										class="media-block__text text_grey _animate-appear media-block__animate-text media-block__animate-text_r-l">
+										COMPANY
+									</div>
+									<div class="media-block__media _animate-appear _img-anim-hidden">
+										<video src="img/home/welcome/media-3.mp4" autoplay muted loop playsinline
+											alt="video of buildings"></video>
+									</div>
 								</div>
-								<div class="media-block__media _animate-appear _img-anim-hidden">
-									<video src="img/home/welcome/media-3.mp4" autoplay muted loop playsinline
-										alt="video of buildings"></video>
-								</div>
-							</div>
 						</div>
 
 						<div class="welcome__goals goals block-cross-out _glass-blured">
@@ -245,35 +336,35 @@
 						<div class='brandingOverlayBatloop'>
 							<div class="scrolling_text">
 								<div class="text">
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
 								</div>
 								<div class="text">
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
 								</div>
 							</div>
 
 							<div class="scrolling_text">
 								<div class="text_alt">
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
 								</div>
 								<div class="text_alt">
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
-									<span>BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
+									<span style="color: transparent;">BatLoop.tech</span>
 								</div>
 							</div>
 						</div>
@@ -488,6 +579,84 @@
 							</ul>
 						</div>
 					</section>
+					<section class="who-we-are">
+						<div class="who-we-are__title title">our <span class="text_grey">clients</span><span
+								class="text-accent_orange">/</span>
+						</div>
+						<div class="who-we-are__list-wrapper block-cross-out clients">
+							<div class="scroll" style="
+							width: -webkit-fill-available;
+						">
+								<div class="m-scroll">
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/294567707_415397073941752_8469375021318292386_n.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/earnifyy.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/falonn.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/jlh.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Kashi Services.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/sys2x.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Yogvan Final Logo.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/unnamed.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/294567707_415397073941752_8469375021318292386_n.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/earnifyy.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/falonn.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/jlh.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Kashi Services.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/sys2x.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Yogvan Final Logo.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/unnamed.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/294567707_415397073941752_8469375021318292386_n.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/earnifyy.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/falonn.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/jlh.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Kashi Services.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/sys2x.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Yogvan Final Logo.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/unnamed.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/294567707_415397073941752_8469375021318292386_n.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/earnifyy.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/falonn.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/jlh.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Kashi Services.jpeg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/sys2x.jpg"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/Yogvan Final Logo.png"></span>
+									<span class="clientImageHolder"><img class="clientImage"
+											src="./img/clients/unnamed.png"></span>
+
+								</div>
+							</div>
+						</div>
+					</section>
 
 					<!--//========== what-we-say = section =========================-->
 					<section class="what-we-say">
@@ -515,8 +684,11 @@
 													</div>
 													<div class="slide-comm__name">
 														<span>Subhadip Saha</span>,
-														<p>Game Dev</p>
-														<p>Email: subhadip@batloop.tech</p>
+														<p style="font-size: small;">Game Developer/Backend Developer
+														</p>
+														<p style="font-size:medium;">Email: <a
+																href="mailto:subhadip@batloop.tech">subhadip@batloop.tech</a>
+														</p>
 													</div>
 													<div class="swiper__navigation">
 														<div class="swiper__buttons">
@@ -567,8 +739,10 @@
 													</div>
 													<div class="slide-comm__name">
 														<span>Rohit Debnath</span>,
-														<p>Web-App Developer</p>
-														<p>Email: rohit@batloop.tech</p>
+														<p style="font-size: small;">Web-App Developer</p>
+														<p style="font-size: medium;">Email: <a
+																href="mailto:rohit@batloop.tech">rohit@batloop.tech</a>
+														</p>
 													</div>
 													<div class="swiper__navigation">
 														<div class="swiper__buttons">
