@@ -860,12 +860,12 @@ body {
 }
 @supports (font-size: clamp(1.125rem, 1.05rem + 0.3333333333vw, 1.25rem)) {
   .menu__item {
-    font-size: x-large;
+    font-size: medium;
   }
 }
 @supports not (font-size: clamp(1.125rem, 1.05rem + 0.3333333333vw, 1.25rem)) {
   .menu__item {
-    font-size: x-large;
+    font-size: medium;
   }
 }
 @supports (line-height: clamp(1.3125rem, 0.975rem + 1.5vw, 1.875rem)) {
