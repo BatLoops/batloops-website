@@ -212,39 +212,7 @@
 		.logo-image{
 			margin: 20px;height: 50%;width: 50%;
 		}
-		@media only screen and (max-width: 768px) {
-			.logo-image{
-				margin: 20px;height: 50%;width: 50%;
-			}
-			.text_alt {
-				display: none;
-			}
-
-			.text {
-				display: none;
-			}
-
-			.header__wrapper::before {
-				bottom: 20px;
-			}
-
-			.clientImageHolder {
-				padding: 20px;
-				border-radius: 10px;
-				margin: 10px;
-				background-color: #ebebeb68;
-				backdrop-filter: blur(5px);
-				display: flex;
-				text-align: center;
-				align-items: center;
-				justify-content: center;
-
-				img {
-					border-radius: 10px;
-					width: 80px;
-				}
-			}
-		}      #circle {
+		#circle {
         position: fixed;
         width: 60px;
         height: 60px;
@@ -266,6 +234,42 @@
 		pointer-events: none; /* Allow mouse events to pass through */
         transition: all 0.1s ease;
     }
+		@media only screen and (max-width: 768px) {
+			.logo-image{
+				margin: 20px;height: 50%;width: 50%;
+			}
+			.text_alt {
+				display: none;
+			}
+
+			.text {
+				display: none;
+			}
+
+			.header__wrapper::before {
+				bottom: 20px;
+			}
+			#circle, #circleMini{
+				display: none;
+			}
+
+			.clientImageHolder {
+				padding: 20px;
+				border-radius: 10px;
+				margin: 10px;
+				background-color: #ebebeb68;
+				backdrop-filter: blur(5px);
+				display: flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					border-radius: 10px;
+					width: 80px;
+				}
+			}
+		}      
 	body{
 		cursor: none;
 	}
@@ -981,6 +985,12 @@
 </body>
 <script>
     window.addEventListener('DOMContentLoaded', () => {
+		const isMobile = () => {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        };
+
+        // If it's a mobile phone, exit the script
+        if (isMobile()) return;
         const circle = document.getElementById('circle');
         let circleWidth = circle.offsetWidth;
         let circleHeight = circle.offsetHeight;
@@ -1047,6 +1057,12 @@
     });
 </script><script>
     window.addEventListener('DOMContentLoaded', () => {
+		const isMobile = () => {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        };
+
+        // If it's a mobile phone, exit the script
+        if (isMobile()) return;
         const circleMini = document.getElementById('circleMini');
         let circleMiniWidth = circleMini.offsetWidth;
         let circleMiniHeight = circleMini.offsetHeight;
